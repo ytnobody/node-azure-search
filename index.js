@@ -492,7 +492,7 @@ module.exports = function (options) {
             return new Promise(function (resolve, reject) {
               args.push(function (err, value, data) {
                 if (err) reject(err)
-                else resolve(value, data)
+                else resolve(data) // resolve(value) not contains '@odata.count'
               })
               fn.apply(self, args)
             })
